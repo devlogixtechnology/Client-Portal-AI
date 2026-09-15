@@ -1,0 +1,92 @@
+[
+  {
+    "chunk_id": "stmt_sample_2_apexretail_fy24_note_1_1",
+    "text": "[Apex Retail Corporation | FY2024 | Note 1 - Accounting Convention and Basis of Preparation]\n\nNote 1: Accounting Convention and Basis of Preparation",
+    "note_title": "Note 1 - Accounting Convention and Basis of Preparation",
+    "note_number": "1",
+    "metadata": {
+      "company_name": "Apex Retail Corporation",
+      "fiscal_period": "FY2024",
+      "statement_id": "stmt_sample_2_apexretail_fy24",
+      "note_number": "1",
+      "note_title": "Note 1 - Accounting Convention and Basis of Preparation",
+      "chunk_index": 0,
+      "total_chunks_in_note": 1,
+      "source_file": "Sample_2_ApexRetail_FY24.xlsx",
+      "type": "notes_to_accounts"
+    },
+    "estimated_tokens": 37
+  },
+  {
+    "chunk_id": "stmt_sample_2_apexretail_fy24_note_3_1",
+    "text": "[Apex Retail Corporation | FY2024 | Note 3 - Tangible Fixed Assets and Depreciation]\n\nNote 3: Tangible Fixed Assets and Depreciation",
+    "note_title": "Note 3 - Tangible Fixed Assets and Depreciation",
+    "note_number": "3",
+    "metadata": {
+      "company_name": "Apex Retail Corporation",
+      "fiscal_period": "FY2024",
+      "statement_id": "stmt_sample_2_apexretail_fy24",
+      "note_number": "3",
+      "note_title": "Note 3 - Tangible Fixed Assets and Depreciation",
+      "chunk_index": 0,
+      "total_chunks_in_note": 1,
+      "source_file": "Sample_2_ApexRetail_FY24.xlsx",
+      "type": "notes_to_accounts"
+    },
+    "estimated_tokens": 33
+  },
+  {
+    "chunk_id": "stmt_sample_2_apexretail_fy24_note_1_1",
+    "text": "[Apex Retail Corporation | FY2024 | Note 1 - Accounting Convention and Basis of Preparation]\n\nNote 1: Accounting Convention and Basis of Preparation\nThe financial statements of Apex Retail Corporation have been prepared under the historical cost convention in accordance with applicable financial reporting standards. Turnover comprises retail merchandise sales and online deliveries, net of discounts and returns provisions.",
+    "note_title": "Note 1 - Accounting Convention and Basis of Preparation",
+    "note_number": "1",
+    "metadata": {
+      "company_name": "Apex Retail Corporation",
+      "fiscal_period": "FY2024",
+      "statement_id": "stmt_sample_2_apexretail_fy24",
+      "note_number": "1",
+      "note_title": "Note 1 - Accounting Convention and Basis of Preparation",
+      "chunk_index": 0,
+      "total_chunks_in_note": 1,
+      "source_file": "Sample_2_ApexRetail_FY24.xlsx",
+      "type": "notes_to_accounts"
+    },
+    "estimated_tokens": 106
+  },
+  {
+    "chunk_id": "stmt_sample_2_apexretail_fy24_note_2_1",
+    "text": "[Apex Retail Corporation | FY2024 | Note 2 - Inventories and Stock Valuation]\n\nNote 2: Inventories and Stock Valuation\nInventories are stated at the lower of cost and net realizable value using the First-In, First-Out (FIFO) method. As of December 31, 2024, finished merchandise was USD 58.1 million and goods in transit totaled USD 6.4 million. A reserve of USD 2.1 million was maintained for obsolete and slow-moving retail inventory.",
+    "note_title": "Note 2 - Inventories and Stock Valuation",
+    "note_number": "2",
+    "metadata": {
+      "company_name": "Apex Retail Corporation",
+      "fiscal_period": "FY2024",
+      "statement_id": "stmt_sample_2_apexretail_fy24",
+      "note_number": "2",
+      "note_title": "Note 2 - Inventories and Stock Valuation",
+      "chunk_index": 0,
+      "total_chunks_in_note": 1,
+      "source_file": "Sample_2_ApexRetail_FY24.xlsx",
+      "type": "notes_to_accounts"
+    },
+    "estimated_tokens": 109
+  },
+  {
+    "chunk_id": "stmt_sample_2_apexretail_fy24_note_3_1",
+    "text": "[Apex Retail Corporation | FY2024 | Note 3 - Tangible Fixed Assets and Depreciation]\n\nNote 3: Tangible Fixed Assets and Depreciation\nTangible fixed assets are stated at cost less accumulated depreciation. Store fixtures and equipment are depreciated over 5 to 10 years, and warehouse facilities over 25 years on a straight-line basis. Depreciation charge for 2024 was USD 9.4 million.",
+    "note_title": "Note 3 - Tangible Fixed Assets and Depreciation",
+    "note_number": "3",
+    "metadata": {
+      "company_name": "Apex Retail Corporation",
+      "fiscal_period": "FY2024",
+      "statement_id": "stmt_sample_2_apexretail_fy24",
+      "note_number": "3",
+      "note_title": "Note 3 - Tangible Fixed Assets and Depreciation",
+      "chunk_index": 0,
+      "total_chunks_in_note": 1,
+      "source_file": "Sample_2_ApexRetail_FY24.xlsx",
+      "type": "notes_to_accounts"
+    },
+    "estimated_tokens": 96
+  }
+]

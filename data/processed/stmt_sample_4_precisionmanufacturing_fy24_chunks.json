@@ -1,0 +1,128 @@
+[
+  {
+    "chunk_id": "stmt_sample_4_precisionmanufacturing_fy24_note_1_1",
+    "text": "[Precision Manufacturing Group | FY2024 | Note 1 - Long-Term Manufacturing Contracts and Revenue]\n\nNote 1: Long-Term Manufacturing Contracts and Revenue",
+    "note_title": "Note 1 - Long-Term Manufacturing Contracts and Revenue",
+    "note_number": "1",
+    "metadata": {
+      "company_name": "Precision Manufacturing Group",
+      "fiscal_period": "FY2024",
+      "statement_id": "stmt_sample_4_precisionmanufacturing_fy24",
+      "note_number": "1",
+      "note_title": "Note 1 - Long-Term Manufacturing Contracts and Revenue",
+      "chunk_index": 0,
+      "total_chunks_in_note": 1,
+      "source_file": "Sample_4_PrecisionManufacturing_FY24.xlsx",
+      "type": "notes_to_accounts"
+    },
+    "estimated_tokens": 38
+  },
+  {
+    "chunk_id": "stmt_sample_4_precisionmanufacturing_fy24_note_2_1",
+    "text": "[Precision Manufacturing Group | FY2024 | Note 2 - Property, Plant and Equipment and Capital Commitments]\n\nNote 2: Property, Plant and Equipment and Capital Commitments",
+    "note_title": "Note 2 - Property, Plant and Equipment and Capital Commitments",
+    "note_number": "2",
+    "metadata": {
+      "company_name": "Precision Manufacturing Group",
+      "fiscal_period": "FY2024",
+      "statement_id": "stmt_sample_4_precisionmanufacturing_fy24",
+      "note_number": "2",
+      "note_title": "Note 2 - Property, Plant and Equipment and Capital Commitments",
+      "chunk_index": 0,
+      "total_chunks_in_note": 1,
+      "source_file": "Sample_4_PrecisionManufacturing_FY24.xlsx",
+      "type": "notes_to_accounts"
+    },
+    "estimated_tokens": 42
+  },
+  {
+    "chunk_id": "stmt_sample_4_precisionmanufacturing_fy24_note_general_1",
+    "text": "[Precision Manufacturing Group | FY2024 | Notes to the Financial Statements]\n\nCapital expenditure commitments contracted for at year-end but not yet incurred were EUR 8.5 million for automated CNC machining lines. Plant and machinery is depreciated using the straight-line method over 7 to 15 years.",
+    "note_title": "Notes to the Financial Statements",
+    "note_number": null,
+    "metadata": {
+      "company_name": "Precision Manufacturing Group",
+      "fiscal_period": "FY2024",
+      "statement_id": "stmt_sample_4_precisionmanufacturing_fy24",
+      "note_number": null,
+      "note_title": "Notes to the Financial Statements",
+      "chunk_index": 0,
+      "total_chunks_in_note": 1,
+      "source_file": "Sample_4_PrecisionManufacturing_FY24.xlsx",
+      "type": "notes_to_accounts"
+    },
+    "estimated_tokens": 74
+  },
+  {
+    "chunk_id": "stmt_sample_4_precisionmanufacturing_fy24_note_3_1",
+    "text": "[Precision Manufacturing Group | FY2024 | Note 3 - Defined Benefit Pension Liabilities]\n\nNote 3: Defined Benefit Pension Liabilities",
+    "note_title": "Note 3 - Defined Benefit Pension Liabilities",
+    "note_number": "3",
+    "metadata": {
+      "company_name": "Precision Manufacturing Group",
+      "fiscal_period": "FY2024",
+      "statement_id": "stmt_sample_4_precisionmanufacturing_fy24",
+      "note_number": "3",
+      "note_title": "Note 3 - Defined Benefit Pension Liabilities",
+      "chunk_index": 0,
+      "total_chunks_in_note": 1,
+      "source_file": "Sample_4_PrecisionManufacturing_FY24.xlsx",
+      "type": "notes_to_accounts"
+    },
+    "estimated_tokens": 33
+  },
+  {
+    "chunk_id": "stmt_sample_4_precisionmanufacturing_fy24_note_1_1",
+    "text": "[Precision Manufacturing Group | FY2024 | Note 1 - Long-Term Manufacturing Contracts and Revenue]\n\nNote 1: Long-Term Manufacturing Contracts and Revenue\nPrecision Manufacturing Group applies IFRS 15 for heavy machinery build contracts. Revenue is recognized over time using the input cost-to-cost percentage-of-completion method. Contract assets of EUR 14.2 million represent unbilled work in progress under long-cycle industrial fabrication agreements.",
+    "note_title": "Note 1 - Long-Term Manufacturing Contracts and Revenue",
+    "note_number": "1",
+    "metadata": {
+      "company_name": "Precision Manufacturing Group",
+      "fiscal_period": "FY2024",
+      "statement_id": "stmt_sample_4_precisionmanufacturing_fy24",
+      "note_number": "1",
+      "note_title": "Note 1 - Long-Term Manufacturing Contracts and Revenue",
+      "chunk_index": 0,
+      "total_chunks_in_note": 1,
+      "source_file": "Sample_4_PrecisionManufacturing_FY24.xlsx",
+      "type": "notes_to_accounts"
+    },
+    "estimated_tokens": 113
+  },
+  {
+    "chunk_id": "stmt_sample_4_precisionmanufacturing_fy24_note_2_1",
+    "text": "[Precision Manufacturing Group | FY2024 | Note 2 - Property, Plant and Equipment and Capital Commitments]\n\nNote 2: Property, Plant and Equipment and Capital Commitments\nCapital expenditure commitments contracted for at year-end but not yet incurred were EUR 8.5 million for automated CNC machining lines. Plant and machinery is depreciated using the straight-line method over 7 to 15 years.",
+    "note_title": "Note 2 - Property, Plant and Equipment and Capital Commitments",
+    "note_number": "2",
+    "metadata": {
+      "company_name": "Precision Manufacturing Group",
+      "fiscal_period": "FY2024",
+      "statement_id": "stmt_sample_4_precisionmanufacturing_fy24",
+      "note_number": "2",
+      "note_title": "Note 2 - Property, Plant and Equipment and Capital Commitments",
+      "chunk_index": 0,
+      "total_chunks_in_note": 1,
+      "source_file": "Sample_4_PrecisionManufacturing_FY24.xlsx",
+      "type": "notes_to_accounts"
+    },
+    "estimated_tokens": 97
+  },
+  {
+    "chunk_id": "stmt_sample_4_precisionmanufacturing_fy24_note_3_1",
+    "text": "[Precision Manufacturing Group | FY2024 | Note 3 - Defined Benefit Pension Liabilities]\n\nNote 3: Defined Benefit Pension Liabilities\nThe Group operates a defined benefit pension scheme covering European factory personnel. The present value of funded obligations was EUR 42.0 million against plan assets of EUR 39.2 million, resulting in a net recognized deficit of EUR 2.8 million.",
+    "note_title": "Note 3 - Defined Benefit Pension Liabilities",
+    "note_number": "3",
+    "metadata": {
+      "company_name": "Precision Manufacturing Group",
+      "fiscal_period": "FY2024",
+      "statement_id": "stmt_sample_4_precisionmanufacturing_fy24",
+      "note_number": "3",
+      "note_title": "Note 3 - Defined Benefit Pension Liabilities",
+      "chunk_index": 0,
+      "total_chunks_in_note": 1,
+      "source_file": "Sample_4_PrecisionManufacturing_FY24.xlsx",
+      "type": "notes_to_accounts"
+    },
+    "estimated_tokens": 95
+  }
+]

@@ -1,0 +1,56 @@
+[
+  {
+    "chunk_id": "stmt_sample_5_cleanenergysolutions_fy24_note_1_1",
+    "text": "[Clean Energy Solutions Corp | FY2024 | Note 1 - Operations and Renewable Asset Accounting]\n\nNote 1 - Operations and Renewable Asset Accounting\nClean Energy Solutions Corp operates utility-scale solar and battery storage generation assets. Energy generation revenue is recognized based on\npower delivery under long-term Power Purchase Agreements (PPAs). Power generation infrastructure is depreciated over expected operational lives\nof 25 to 30 years.",
+    "note_title": "Note 1 - Operations and Renewable Asset Accounting",
+    "note_number": "1",
+    "metadata": {
+      "company_name": "Clean Energy Solutions Corp",
+      "fiscal_period": "FY2024",
+      "statement_id": "stmt_sample_5_cleanenergysolutions_fy24",
+      "note_number": "1",
+      "note_title": "Note 1 - Operations and Renewable Asset Accounting",
+      "chunk_index": 0,
+      "total_chunks_in_note": 1,
+      "source_file": "Sample_5_CleanEnergySolutions_FY24.pdf",
+      "type": "notes_to_accounts"
+    },
+    "estimated_tokens": 112
+  },
+  {
+    "chunk_id": "stmt_sample_5_cleanenergysolutions_fy24_note_2_1",
+    "text": "[Clean Energy Solutions Corp | FY2024 | Note 2 - Asset Retirement Obligations and Decommissioning]\n\nNote 2 - Asset Retirement Obligations and Decommissioning\nThe company records an asset retirement obligation (ARO) for contractual obligations to dismantle solar arrays and remediate leased agricultural land\nupon lease expiration. As of December 31, 2024, the discounted ARO liability was USD 18.5 million.",
+    "note_title": "Note 2 - Asset Retirement Obligations and Decommissioning",
+    "note_number": "2",
+    "metadata": {
+      "company_name": "Clean Energy Solutions Corp",
+      "fiscal_period": "FY2024",
+      "statement_id": "stmt_sample_5_cleanenergysolutions_fy24",
+      "note_number": "2",
+      "note_title": "Note 2 - Asset Retirement Obligations and Decommissioning",
+      "chunk_index": 0,
+      "total_chunks_in_note": 1,
+      "source_file": "Sample_5_CleanEnergySolutions_FY24.pdf",
+      "type": "notes_to_accounts"
+    },
+    "estimated_tokens": 101
+  },
+  {
+    "chunk_id": "stmt_sample_5_cleanenergysolutions_fy24_note_3_1",
+    "text": "[Clean Energy Solutions Corp | FY2024 | Note 3 - Green Bonds and Project Financing]\n\nNote 3 - Green Bonds and Project Financing\nLong-term project debt comprises USD 180 million of senior secured green bonds due 2035 with a fixed coupon of 4.75%, and USD 100 million in\ncommercial project bank loans. Debt service reserve accounts of USD 12.0 million are restricted and classified within non-current assets.",
+    "note_title": "Note 3 - Green Bonds and Project Financing",
+    "note_number": "3",
+    "metadata": {
+      "company_name": "Clean Energy Solutions Corp",
+      "fiscal_period": "FY2024",
+      "statement_id": "stmt_sample_5_cleanenergysolutions_fy24",
+      "note_number": "3",
+      "note_title": "Note 3 - Green Bonds and Project Financing",
+      "chunk_index": 0,
+      "total_chunks_in_note": 1,
+      "source_file": "Sample_5_CleanEnergySolutions_FY24.pdf",
+      "type": "notes_to_accounts"
+    },
+    "estimated_tokens": 101
+  }
+]

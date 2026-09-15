@@ -1,0 +1,56 @@
+[
+  {
+    "chunk_id": "stmt_sample_3_biohealth_diagnostics_fy24_note_1_1",
+    "text": "[BioHealth Diagnostics Inc. | FY2024 | Note 1 - Principal Accounting Policies and Regulatory Context]\n\nNote 1 - Principal Accounting Policies and Regulatory Context\nBioHealth Diagnostics Inc. develops clinical molecular diagnostic kits. The financial statements comply with International Financial Reporting\nStandards (IFRS). Revenues from reagent diagnostic kit sales are recognized at point of delivery, whereas instrument placements are evaluated under\nmulti-component contract criteria.",
+    "note_title": "Note 1 - Principal Accounting Policies and Regulatory Context",
+    "note_number": "1",
+    "metadata": {
+      "company_name": "BioHealth Diagnostics Inc.",
+      "fiscal_period": "FY2024",
+      "statement_id": "stmt_sample_3_biohealth_diagnostics_fy24",
+      "note_number": "1",
+      "note_title": "Note 1 - Principal Accounting Policies and Regulatory Context",
+      "chunk_index": 0,
+      "total_chunks_in_note": 1,
+      "source_file": "Sample_3_BioHealth_Diagnostics_FY24.pdf",
+      "type": "notes_to_accounts"
+    },
+    "estimated_tokens": 122
+  },
+  {
+    "chunk_id": "stmt_sample_3_biohealth_diagnostics_fy24_note_2_1",
+    "text": "[BioHealth Diagnostics Inc. | FY2024 | Note 2 - Government Grants and Collaborative Research]\n\nNote 2 - Government Grants and Collaborative Research\nDuring FY2024, the entity received GBP 2.4 million in government grants for oncology diagnostic development. Grants related to income are\nrecognized in the statement of profit and loss as a reduction of research and development expense in the period in which the associated research\ncosts are incurred.",
+    "note_title": "Note 2 - Government Grants and Collaborative Research",
+    "note_number": "2",
+    "metadata": {
+      "company_name": "BioHealth Diagnostics Inc.",
+      "fiscal_period": "FY2024",
+      "statement_id": "stmt_sample_3_biohealth_diagnostics_fy24",
+      "note_number": "2",
+      "note_title": "Note 2 - Government Grants and Collaborative Research",
+      "chunk_index": 0,
+      "total_chunks_in_note": 1,
+      "source_file": "Sample_3_BioHealth_Diagnostics_FY24.pdf",
+      "type": "notes_to_accounts"
+    },
+    "estimated_tokens": 112
+  },
+  {
+    "chunk_id": "stmt_sample_3_biohealth_diagnostics_fy24_note_3_1",
+    "text": "[BioHealth Diagnostics Inc. | FY2024 | Note 3 - Contingent Liabilities and IP Licensing]\n\nNote 3 - Contingent Liabilities and IP Licensing\nThe company is engaged in cross-licensing agreements with two academic research institutions. Contingent royalty obligations range between 2.5%\nand 4.0% of net commercial kit revenues. There are no ongoing patent infringement disputes or litigation claims.",
+    "note_title": "Note 3 - Contingent Liabilities and IP Licensing",
+    "note_number": "3",
+    "metadata": {
+      "company_name": "BioHealth Diagnostics Inc.",
+      "fiscal_period": "FY2024",
+      "statement_id": "stmt_sample_3_biohealth_diagnostics_fy24",
+      "note_number": "3",
+      "note_title": "Note 3 - Contingent Liabilities and IP Licensing",
+      "chunk_index": 0,
+      "total_chunks_in_note": 1,
+      "source_file": "Sample_3_BioHealth_Diagnostics_FY24.pdf",
+      "type": "notes_to_accounts"
+    },
+    "estimated_tokens": 98
+  }
+]

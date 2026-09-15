@@ -1,0 +1,74 @@
+[
+  {
+    "chunk_id": "stmt_sample_1_techvanguard_fy24_note_1_1",
+    "text": "[TechVanguard Software Inc. | FY2024 | Note 1 - Organization and Summary of Significant Accounting Policies]\n\nNote 1 - Organization and Summary of Significant Accounting Policies\nTechVanguard Software Inc. is a provider of cloud-based enterprise intelligence software. The accompanying consolidated financial statements have\nbeen prepared in conformity with US GAAP. Revenue is recognized pursuant to ASC 606 when control of promised software services is transferred to\ncustomers, typically ratably over annual or multi-year subscription terms. Trade receivables are carried at face value less allowance for credit losses.\nCapitalized software development costs are amortized on a straight-line basis over 3 years.",
+    "note_title": "Note 1 - Organization and Summary of Significant Accounting Policies",
+    "note_number": "1",
+    "metadata": {
+      "company_name": "TechVanguard Software Inc.",
+      "fiscal_period": "FY2024",
+      "statement_id": "stmt_sample_1_techvanguard_fy24",
+      "note_number": "1",
+      "note_title": "Note 1 - Organization and Summary of Significant Accounting Policies",
+      "chunk_index": 0,
+      "total_chunks_in_note": 1,
+      "source_file": "Sample_1_TechVanguard_FY24.pdf",
+      "type": "notes_to_accounts"
+    },
+    "estimated_tokens": 178
+  },
+  {
+    "chunk_id": "stmt_sample_1_techvanguard_fy24_note_2_1",
+    "text": "[TechVanguard Software Inc. | FY2024 | Note 2 - Operating Leases and Commitments]\n\nNote 2 - Operating Leases and Commitments\nThe Company leases office facilities and data center capacity under non-cancelable operating leases expiring at various dates through 2029. As of\nDecember 31, 2024, operating lease liabilities were USD 8.4 million with a weighted-average remaining lease term of 4.2 years and a discount rate of\n5.5%. Future minimum lease obligations are USD 2.5 million in 2025, USD 2.2 million in 2026, and USD 3.7 million thereafter.",
+    "note_title": "Note 2 - Operating Leases and Commitments",
+    "note_number": "2",
+    "metadata": {
+      "company_name": "TechVanguard Software Inc.",
+      "fiscal_period": "FY2024",
+      "statement_id": "stmt_sample_1_techvanguard_fy24",
+      "note_number": "2",
+      "note_title": "Note 2 - Operating Leases and Commitments",
+      "chunk_index": 0,
+      "total_chunks_in_note": 1,
+      "source_file": "Sample_1_TechVanguard_FY24.pdf",
+      "type": "notes_to_accounts"
+    },
+    "estimated_tokens": 136
+  },
+  {
+    "chunk_id": "stmt_sample_1_techvanguard_fy24_note_3_1",
+    "text": "[TechVanguard Software Inc. | FY2024 | Note 3 - Credit Facilities and Long-Term Debt]\n\nNote 3 - Credit Facilities and Long-Term Debt\nAs of December 31, 2024, the Company maintained a senior secured term loan facility with an outstanding principal of USD 30.0 million bearing\ninterest at Term SOFR plus 2.25%. The credit agreement contains financial covenants requiring maintenance of a minimum fixed charge coverage\nratio of 1.25x and maximum leverage ratio of 2.75x. The Company was in full compliance with all covenants.",
+    "note_title": "Note 3 - Credit Facilities and Long-Term Debt",
+    "note_number": "3",
+    "metadata": {
+      "company_name": "TechVanguard Software Inc.",
+      "fiscal_period": "FY2024",
+      "statement_id": "stmt_sample_1_techvanguard_fy24",
+      "note_number": "3",
+      "note_title": "Note 3 - Credit Facilities and Long-Term Debt",
+      "chunk_index": 0,
+      "total_chunks_in_note": 1,
+      "source_file": "Sample_1_TechVanguard_FY24.pdf",
+      "type": "notes_to_accounts"
+    },
+    "estimated_tokens": 130
+  },
+  {
+    "chunk_id": "stmt_sample_1_techvanguard_fy24_note_4_1",
+    "text": "[TechVanguard Software Inc. | FY2024 | Note 4 - Stock-Based Compensation]\n\nNote 4 - Stock-Based Compensation\nThe Company recognized stock-based compensation expense of USD 4.8 million for the year ended December 31, 2024. Restricted stock units\n(RSUs) vest over a four-year period with a 25% cliff at one year and quarterly vesting thereafter. Unrecognized compensation expense related to\nunvested awards was USD 7.2 million, expected to be recognized over 2.6 years.",
+    "note_title": "Note 4 - Stock-Based Compensation",
+    "note_number": "4",
+    "metadata": {
+      "company_name": "TechVanguard Software Inc.",
+      "fiscal_period": "FY2024",
+      "statement_id": "stmt_sample_1_techvanguard_fy24",
+      "note_number": "4",
+      "note_title": "Note 4 - Stock-Based Compensation",
+      "chunk_index": 0,
+      "total_chunks_in_note": 1,
+      "source_file": "Sample_1_TechVanguard_FY24.pdf",
+      "type": "notes_to_accounts"
+    },
+    "estimated_tokens": 116
+  }
+]
