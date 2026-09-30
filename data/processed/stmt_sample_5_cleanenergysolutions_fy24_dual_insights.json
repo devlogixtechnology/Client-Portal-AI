@@ -1,0 +1,45 @@
+{
+  "document_id": "stmt_sample_5_cleanenergysolutions_fy24",
+  "company_name": "Clean Energy Solutions Corp",
+  "fiscal_period": "FY2024",
+  "client_view": {
+    "executive_summary": "Welcome Clean Energy Solutions Corp. Your financial report for FY2024 has been analyzed. We note an outstanding balance of $10.84. LedgerLense offers flexible self-service resolution options to help maintain your account in good standing.",
+    "account_status_headline": "Action Recommended: Outstanding Invoice Settlement Options Available",
+    "settlement_options": [
+      "Pay full balance ($10.84) via Portal to receive 2% early settlement credit.",
+      "Enforce a 3-month equal installment payment plan with zero late penalty fees.",
+      "Request a formal line item reconciliation call with your dedicated Billing Specialist."
+    ],
+    "self_service_actions": [
+      "Download Itemized Invoice Statement PDF",
+      "Set Up Auto-Pay via ACH / Bank Wire",
+      "Submit Invoice Inquiry or Payment Confirmation Receipt"
+    ],
+    "reassuring_note": "Thank you for being a valued client of LedgerLense. Our dedicated support team is available 24/7 to assist you."
+  },
+  "rm_view": {
+    "internal_risk_assessment": "INTERNAL RM RISK REPORT [Clean Energy Solutions Corp - FY2024]: Total past due exposure stands at $10.84 (28.0% of total AR). Collection urgency level set to HIGH. Immediate RM intervention recommended prior to credit line renewal.",
+    "collection_urgency_tier": "high",
+    "recommended_credit_limit": 21.5,
+    "tactical_negotiation_playbook": [
+      "Initiate direct C-level outreach with Clean Energy Solutions Corp Chief Financial Officer regarding overdue exposure of $10.84.",
+      "Condition any new service provision or order delivery on 50% cash-in-advance payment.",
+      "Review current credit line limit and cap at $21.50 pending 30-day payment compliance.",
+      "Issue formal 14-day legal collection warning letter if no payment receipt is logged by Friday."
+    ],
+    "overdue_exposure_amount": 10.84,
+    "credit_hold_recommended": true
+  },
+  "overdue_metrics": {
+    "total_receivables": 38.7,
+    "total_overdue_amount": 10.84,
+    "overdue_ratio": 0.2801,
+    "critical_overdue_count": 1,
+    "average_days_overdue": 71.2,
+    "expected_recovery_amount": 9.21
+  },
+  "status": "SUCCESS",
+  "latency_ms": 120.47,
+  "model_used": "llama3.2:quantized-local",
+  "timestamp": "2026-09-30T12:11:09.067669+00:00"
+}

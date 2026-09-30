@@ -1,6 +1,6 @@
 """
 Data schemas for the LLM Financial Summary & Insight Engine (LIG - Overdue Recovery).
-Defines strongly-typed contracts for financial insights, overdue account aging, recovery risk tiers, and structured engine output using Pydantic v2.
+Defines strongly-typed contracts for financial insights, overdue account aging, recovery risk tiers, dual-persona views, and structured engine output using Pydantic v2.
 """
 
 from enum import Enum
@@ -21,6 +21,12 @@ class InsightCategory(str, Enum):
     REVENUE_HEALTH = "revenue_health"
     WORKING_CAPITAL = "working_capital"
     RISK_FLAG = "risk_flag"
+
+
+class PersonaType(str, Enum):
+    CLIENT = "client"
+    RELATIONSHIP_MANAGER = "relationship_manager"
+    DUAL = "dual"
 
 
 class OverdueAccount(BaseModel):
@@ -57,6 +63,25 @@ class OverdueSummaryMetrics(BaseModel):
     expected_recovery_amount: float = Field(0.0, description="Estimated collectible value based on risk weighting")
 
 
+class ClientViewSummary(BaseModel):
+    """Client-facing summary view: Plain-language, reassuring, resolution-focused."""
+    executive_summary: str = Field(..., description="Plain-language financial health summary for client viewing")
+    account_status_headline: str = Field(..., description="Status headline e.g. 'Action Needed: Payment Plan Available'")
+    settlement_options: List[str] = Field(default_factory=list, description="Self-service payment and settlement options")
+    self_service_actions: List[str] = Field(default_factory=list, description="Available portal actions for client")
+    reassuring_note: str = Field(..., description="Supportive closing note to maintain positive business relationship")
+
+
+class RMViewSummary(BaseModel):
+    """Relationship Manager (RM)-facing summary view: Tactical, risk-heavy, negotiation-focused."""
+    internal_risk_assessment: str = Field(..., description="Internal tactical financial risk narrative")
+    collection_urgency_tier: RiskTier = Field(RiskTier.HIGH, description="Calculated collection urgency level")
+    recommended_credit_limit: float = Field(0.0, description="Recommended adjusted credit line limit")
+    tactical_negotiation_playbook: List[str] = Field(default_factory=list, description="Internal debt recovery and negotiation steps")
+    overdue_exposure_amount: float = Field(0.0, description="Total overdue balance exposure")
+    credit_hold_recommended: bool = Field(False, description="Whether an immediate credit hold is recommended")
+
+
 class FinancialSummaryRequest(BaseModel):
     """Input request contract for the financial summary & insight engine."""
     document_id: str = Field(..., description="Target document ID")
@@ -65,6 +90,7 @@ class FinancialSummaryRequest(BaseModel):
     summary_metrics: Dict[str, Optional[float]] = Field(default_factory=dict, description="Extracted standard financial metrics")
     notes_summary_text: str = Field("", description="Cleaned combined text from Notes to Accounts")
     raw_receivables_data: List[Dict[str, Any]] = Field(default_factory=list, description="Raw receivables ledger entries if available")
+    persona: PersonaType = Field(PersonaType.DUAL, description="Target view persona")
 
 
 class FinancialSummaryResult(BaseModel):
@@ -80,4 +106,18 @@ class FinancialSummaryResult(BaseModel):
     status: str = Field("SUCCESS", description="Execution status ('SUCCESS', 'FALLBACK')")
     latency_ms: float = Field(..., description="Total execution latency in milliseconds")
     model_used: str = Field("llama3.2:quantized-local", description="Model identifier used for inference")
+    timestamp: str = Field(..., description="ISO 8601 execution timestamp")
+
+
+class DualPersonaSummaryResult(BaseModel):
+    """Top-level JSON result container delivering both Client and Relationship Manager persona views."""
+    document_id: str = Field(..., description="Unique document ID")
+    company_name: str = Field(..., description="Reporting company name")
+    fiscal_period: str = Field(..., description="Fiscal period")
+    client_view: ClientViewSummary = Field(..., description="Client-facing transparent summary and self-service options")
+    rm_view: RMViewSummary = Field(..., description="RM-facing internal risk analysis and collection playbook")
+    overdue_metrics: OverdueSummaryMetrics = Field(default_factory=OverdueSummaryMetrics, description="Overdue receivables metrics")
+    status: str = Field("SUCCESS", description="Execution status ('SUCCESS', 'FALLBACK')")
+    latency_ms: float = Field(..., description="Total execution latency in milliseconds")
+    model_used: str = Field("llama3.2:quantized-local", description="Model identifier")
     timestamp: str = Field(..., description="ISO 8601 execution timestamp")

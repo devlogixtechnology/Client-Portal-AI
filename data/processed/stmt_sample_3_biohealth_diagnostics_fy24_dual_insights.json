@@ -1,0 +1,45 @@
+{
+  "document_id": "stmt_sample_3_biohealth_diagnostics_fy24",
+  "company_name": "BioHealth Diagnostics Inc.",
+  "fiscal_period": "FY2024",
+  "client_view": {
+    "executive_summary": "Welcome BioHealth Diagnostics Inc.. Your financial report for FY2024 has been analyzed. We note an outstanding balance of $4,354.56. LedgerLense offers flexible self-service resolution options to help maintain your account in good standing.",
+    "account_status_headline": "Action Recommended: Outstanding Invoice Settlement Options Available",
+    "settlement_options": [
+      "Pay full balance ($4,354.56) via Portal to receive 2% early settlement credit.",
+      "Enforce a 3-month equal installment payment plan with zero late penalty fees.",
+      "Request a formal line item reconciliation call with your dedicated Billing Specialist."
+    ],
+    "self_service_actions": [
+      "Download Itemized Invoice Statement PDF",
+      "Set Up Auto-Pay via ACH / Bank Wire",
+      "Submit Invoice Inquiry or Payment Confirmation Receipt"
+    ],
+    "reassuring_note": "Thank you for being a valued client of LedgerLense. Our dedicated support team is available 24/7 to assist you."
+  },
+  "rm_view": {
+    "internal_risk_assessment": "INTERNAL RM RISK REPORT [BioHealth Diagnostics Inc. - FY2024]: Total past due exposure stands at $4,354.56 (28.0% of total AR). Collection urgency level set to HIGH. Immediate RM intervention recommended prior to credit line renewal.",
+    "collection_urgency_tier": "high",
+    "recommended_credit_limit": 8640.0,
+    "tactical_negotiation_playbook": [
+      "Initiate direct C-level outreach with BioHealth Diagnostics Inc. Chief Financial Officer regarding overdue exposure of $4,354.56.",
+      "Condition any new service provision or order delivery on 50% cash-in-advance payment.",
+      "Review current credit line limit and cap at $8,640.00 pending 30-day payment compliance.",
+      "Issue formal 14-day legal collection warning letter if no payment receipt is logged by Friday."
+    ],
+    "overdue_exposure_amount": 4354.56,
+    "credit_hold_recommended": true
+  },
+  "overdue_metrics": {
+    "total_receivables": 15552.0,
+    "total_overdue_amount": 4354.56,
+    "overdue_ratio": 0.28,
+    "critical_overdue_count": 1,
+    "average_days_overdue": 71.2,
+    "expected_recovery_amount": 3701.38
+  },
+  "status": "SUCCESS",
+  "latency_ms": 125.62,
+  "model_used": "llama3.2:quantized-local",
+  "timestamp": "2026-09-30T12:11:08.813006+00:00"
+}
