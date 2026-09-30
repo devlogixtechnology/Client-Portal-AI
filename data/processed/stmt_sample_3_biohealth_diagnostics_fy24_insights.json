@@ -1,0 +1,95 @@
+{
+  "document_id": "stmt_sample_3_biohealth_diagnostics_fy24",
+  "company_name": "BioHealth Diagnostics Inc.",
+  "fiscal_period": "FY2024",
+  "executive_summary": "Executive Financial Summary for BioHealth Diagnostics Inc. (FY2024): The company recorded total revenue of $86,400.00. Accounts receivable analysis highlights total overdue exposure of $4,354.56 with an overdue ratio of 28.0%. Immediate focus is required on 1 critical delinquency accounts to optimize recovery and safeguard working capital liquidity.",
+  "overdue_metrics": {
+    "total_receivables": 15552.0,
+    "total_overdue_amount": 4354.56,
+    "overdue_ratio": 0.28,
+    "critical_overdue_count": 1,
+    "average_days_overdue": 71.2,
+    "expected_recovery_amount": 3342.12
+  },
+  "overdue_accounts": [
+    {
+      "account_id": "INV-2024-001",
+      "client_name": "BioHealth Diagnostics Inc. - Enterprise Client Alpha",
+      "overdue_amount": 1959.55,
+      "currency": "USD",
+      "days_overdue": 95,
+      "risk_tier": "critical",
+      "last_payment_date": "2024-05-15",
+      "recommended_action": "Issue formal legal collection demand notice & suspend subscription service pending payment.",
+      "recovery_probability": 0.65
+    },
+    {
+      "account_id": "INV-2024-008",
+      "client_name": "BioHealth Diagnostics Inc. - Global Logistics Beta",
+      "overdue_amount": 1524.1,
+      "currency": "USD",
+      "days_overdue": 62,
+      "risk_tier": "high",
+      "last_payment_date": "2024-06-20",
+      "recommended_action": "Enforce strict 14-day payment plan with 2% early-settlement incentive.",
+      "recovery_probability": 0.82
+    },
+    {
+      "account_id": "INV-2024-014",
+      "client_name": "BioHealth Diagnostics Inc. - Regional Retail Gamma",
+      "overdue_amount": 870.91,
+      "currency": "USD",
+      "days_overdue": 34,
+      "risk_tier": "medium",
+      "last_payment_date": "2024-07-10",
+      "recommended_action": "Send automated payment reminder and initiate courtesy executive follow-up call.",
+      "recovery_probability": 0.94
+    }
+  ],
+  "key_insights": [
+    {
+      "insight_id": "INS-REC-01",
+      "category": "overdue_recovery",
+      "title": "Overdue Receivables Concentration Risk",
+      "description": "BioHealth Diagnostics Inc. has $4,354.56 in past due accounts receivable (28.0% of total receivables). Critical accounts (>90 days) comprise $3,342.12 in collectible value.",
+      "impact_score": 0.88,
+      "actionable_recommendation": "Prioritize recovery workflow on Tier-1 critical accounts to unlock liquidity before fiscal quarter close.",
+      "supporting_metrics": {
+        "total_overdue": 4354.56,
+        "critical_accounts": 1,
+        "expected_recovery": 3342.12
+      }
+    },
+    {
+      "insight_id": "INS-LIQ-02",
+      "category": "liquidity_analysis",
+      "title": "Cash Flow & Working Capital Cushion",
+      "description": "Cash and cash equivalents combined with recoverable receivables provide adequate coverage for operational expenses over the next 90 days.",
+      "impact_score": 0.72,
+      "actionable_recommendation": "Accelerate collection cycle from 65 days to target 45 days to reduce working capital reliance.",
+      "supporting_metrics": {
+        "avg_days_overdue": 71.2,
+        "overdue_ratio": 0.28
+      }
+    },
+    {
+      "insight_id": "INS-REV-03",
+      "category": "revenue_health",
+      "title": "Gross Margin Efficiency Analysis",
+      "description": "Reporting gross margin of 67.0% based on revenue of $86,400.00 and gross profit of $57,900.00.",
+      "impact_score": 0.65,
+      "actionable_recommendation": "Maintain strict cost-of-goods oversight while expanding high-margin enterprise service tiers.",
+      "supporting_metrics": {
+        "gross_margin_percent": 67.01
+      }
+    }
+  ],
+  "financial_risk_flags": [
+    "High Overdue Receivables Ratio: 28.0% exceeds 20% safety threshold.",
+    "Critical Delinquency Alert: 1 accounts past 90 days delinquent."
+  ],
+  "status": "SUCCESS",
+  "latency_ms": 51.18,
+  "model_used": "llama3.2:quantized-local-fallback",
+  "timestamp": "2026-09-30T11:56:46.307829+00:00"
+}
