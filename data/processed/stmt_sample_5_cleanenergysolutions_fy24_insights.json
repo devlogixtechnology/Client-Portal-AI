@@ -1,0 +1,95 @@
+{
+  "document_id": "stmt_sample_5_cleanenergysolutions_fy24",
+  "company_name": "Clean Energy Solutions Corp",
+  "fiscal_period": "FY2024",
+  "executive_summary": "Executive Financial Summary for Clean Energy Solutions Corp (FY2024): The company recorded total revenue of $215.00. Accounts receivable analysis highlights total overdue exposure of $10.84 with an overdue ratio of 28.0%. Immediate focus is required on 1 critical delinquency accounts to optimize recovery and safeguard working capital liquidity.",
+  "overdue_metrics": {
+    "total_receivables": 38.7,
+    "total_overdue_amount": 10.84,
+    "overdue_ratio": 0.2801,
+    "critical_overdue_count": 1,
+    "average_days_overdue": 71.3,
+    "expected_recovery_amount": 8.32
+  },
+  "overdue_accounts": [
+    {
+      "account_id": "INV-2024-001",
+      "client_name": "Clean Energy Solutions Corp - Enterprise Client Alpha",
+      "overdue_amount": 4.88,
+      "currency": "USD",
+      "days_overdue": 95,
+      "risk_tier": "critical",
+      "last_payment_date": "2024-05-15",
+      "recommended_action": "Issue formal legal collection demand notice & suspend subscription service pending payment.",
+      "recovery_probability": 0.65
+    },
+    {
+      "account_id": "INV-2024-008",
+      "client_name": "Clean Energy Solutions Corp - Global Logistics Beta",
+      "overdue_amount": 3.79,
+      "currency": "USD",
+      "days_overdue": 62,
+      "risk_tier": "high",
+      "last_payment_date": "2024-06-20",
+      "recommended_action": "Enforce strict 14-day payment plan with 2% early-settlement incentive.",
+      "recovery_probability": 0.82
+    },
+    {
+      "account_id": "INV-2024-014",
+      "client_name": "Clean Energy Solutions Corp - Regional Retail Gamma",
+      "overdue_amount": 2.17,
+      "currency": "USD",
+      "days_overdue": 34,
+      "risk_tier": "medium",
+      "last_payment_date": "2024-07-10",
+      "recommended_action": "Send automated payment reminder and initiate courtesy executive follow-up call.",
+      "recovery_probability": 0.94
+    }
+  ],
+  "key_insights": [
+    {
+      "insight_id": "INS-REC-01",
+      "category": "overdue_recovery",
+      "title": "Overdue Receivables Concentration Risk",
+      "description": "Clean Energy Solutions Corp has $10.84 in past due accounts receivable (28.0% of total receivables). Critical accounts (>90 days) comprise $8.32 in collectible value.",
+      "impact_score": 0.88,
+      "actionable_recommendation": "Prioritize recovery workflow on Tier-1 critical accounts to unlock liquidity before fiscal quarter close.",
+      "supporting_metrics": {
+        "total_overdue": 10.84,
+        "critical_accounts": 1,
+        "expected_recovery": 8.32
+      }
+    },
+    {
+      "insight_id": "INS-LIQ-02",
+      "category": "liquidity_analysis",
+      "title": "Cash Flow & Working Capital Cushion",
+      "description": "Cash and cash equivalents combined with recoverable receivables provide adequate coverage for operational expenses over the next 90 days.",
+      "impact_score": 0.72,
+      "actionable_recommendation": "Accelerate collection cycle from 65 days to target 45 days to reduce working capital reliance.",
+      "supporting_metrics": {
+        "avg_days_overdue": 71.3,
+        "overdue_ratio": 0.2801
+      }
+    },
+    {
+      "insight_id": "INS-REV-03",
+      "category": "revenue_health",
+      "title": "Gross Margin Efficiency Analysis",
+      "description": "Reporting gross margin of 51.2% based on revenue of $215.00 and gross profit of $110.00.",
+      "impact_score": 0.65,
+      "actionable_recommendation": "Maintain strict cost-of-goods oversight while expanding high-margin enterprise service tiers.",
+      "supporting_metrics": {
+        "gross_margin_percent": 51.16
+      }
+    }
+  ],
+  "financial_risk_flags": [
+    "High Overdue Receivables Ratio: 28.0% exceeds 20% safety threshold.",
+    "Critical Delinquency Alert: 1 accounts past 90 days delinquent."
+  ],
+  "status": "SUCCESS",
+  "latency_ms": 53.34,
+  "model_used": "llama3.2:quantized-local-fallback",
+  "timestamp": "2026-09-30T11:56:46.424942+00:00"
+}
