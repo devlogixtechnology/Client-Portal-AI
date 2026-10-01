@@ -27,7 +27,7 @@
   "overall_risk_score": 30.0,
   "overall_health_tier": "MODERATE_RISK",
   "status": "SUCCESS",
-  "latency_ms": 0.25,
+  "latency_ms": 1.09,
   "model_used": "llama3.2:quantized-local",
-  "timestamp": "2026-10-01T13:43:08.130305+00:00"
+  "timestamp": "2026-10-01T15:34:17.685757+00:00"
 }

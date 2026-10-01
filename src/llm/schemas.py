@@ -1,6 +1,6 @@
 """
-Data schemas for the LLM Financial Summary & Insight Engine (LIG - Overdue Recovery, Dual-Persona & Accounting Anomaly Engine).
-Defines strongly-typed contracts for financial insights, overdue account aging, recovery risk tiers, dual-persona views, and accounting anomalies using Pydantic v2.
+Data schemas for the LLM Financial Summary & Insight Engine (LIG - Overdue Recovery, Dual-Persona, Accounting Anomaly Engine & Master Diagnostic Suite).
+Defines strongly-typed contracts for financial insights, overdue account aging, recovery risk tiers, dual-persona views, accounting anomalies, and master diagnostic reports using Pydantic v2.
 """
 
 from enum import Enum
@@ -42,6 +42,12 @@ class AnomalyCategory(str, Enum):
     ACCOUNTING_MISMATCH = "accounting_mismatch"
     AUDIT_FOOTNOTE_FLAG = "audit_footnote_flag"
     SOLVENCY_RISK = "solvency_risk"
+
+
+class PipelineStageStatus(str, Enum):
+    PASSED = "passed"
+    WARNING = "warning"
+    FAILED = "failed"
 
 
 class OverdueAccount(BaseModel):
@@ -121,6 +127,15 @@ class LiquidityHealthMetrics(BaseModel):
     cash_burn_rate_monthly: Optional[float] = Field(None, description="Monthly estimated net operating cash drain")
 
 
+class StageDiagnosticResult(BaseModel):
+    """Individual diagnostic result for a pipeline execution stage."""
+    stage_name: str = Field(..., description="Name of the pipeline stage")
+    status: PipelineStageStatus = Field(PipelineStageStatus.PASSED, description="Stage execution status")
+    latency_ms: float = Field(..., description="Stage execution latency in milliseconds")
+    items_processed: int = Field(0, description="Count of items/line items processed")
+    warnings: List[str] = Field(default_factory=list, description="Warnings generated during stage execution")
+
+
 class FinancialSummaryRequest(BaseModel):
     """Input request contract for the financial summary & insight engine."""
     document_id: str = Field(..., description="Target document ID")
@@ -174,4 +189,20 @@ class AnomalyDetectionResult(BaseModel):
     status: str = Field("SUCCESS", description="Execution status ('SUCCESS', 'FALLBACK')")
     latency_ms: float = Field(..., description="Total execution latency in milliseconds")
     model_used: str = Field("llama3.2:quantized-local", description="Model identifier used")
+    timestamp: str = Field(..., description="ISO 8601 execution timestamp")
+
+
+class MasterDiagnosticReport(BaseModel):
+    """Top-level JSON master diagnostic report unblocking end-to-end integration (LIG-4)."""
+    document_id: str = Field(..., description="Unique document ID")
+    company_name: str = Field(..., description="Reporting company name")
+    fiscal_period: str = Field(..., description="Fiscal period")
+    composite_health_grade: str = Field(..., description="Overall composite health letter grade: A+, A, B, C, D, F")
+    stage_results: List[StageDiagnosticResult] = Field(default_factory=list, description="Results from each pipeline diagnostic stage")
+    overdue_summary: Optional[FinancialSummaryResult] = Field(None, description="LIG-1 Overdue recovery summary output")
+    dual_persona_summary: Optional[DualPersonaSummaryResult] = Field(None, description="LIG-2 Dual persona view output")
+    anomaly_detection: Optional[AnomalyDetectionResult] = Field(None, description="LIG-3 Anomaly detection output")
+    overall_status: str = Field("SUCCESS", description="Overall diagnostic execution status")
+    total_latency_ms: float = Field(..., description="Total end-to-end execution latency across all 4 pipeline stages")
+    offline_verified: bool = Field(True, description="Flag confirming zero runtime cloud API calls")
     timestamp: str = Field(..., description="ISO 8601 execution timestamp")

@@ -1,0 +1,215 @@
+{
+  "document_id": "stmt_sample_2_apexretail_fy24",
+  "company_name": "Apex Retail Corporation",
+  "fiscal_period": "FY2024",
+  "composite_health_grade": "B",
+  "stage_results": [
+    {
+      "stage_name": "Stage 1: Document Ingestion & Line Item Taxonomy Normalization",
+      "status": "passed",
+      "latency_ms": 1.81,
+      "items_processed": 60,
+      "warnings": []
+    },
+    {
+      "stage_name": "Stage 2: LLM Overdue Recovery & Insight Engine",
+      "status": "passed",
+      "latency_ms": 52.63,
+      "items_processed": 3,
+      "warnings": []
+    },
+    {
+      "stage_name": "Stage 3: Dual-Persona View Summary Engine (Client vs RM)",
+      "status": "passed",
+      "latency_ms": 106.64,
+      "items_processed": 2,
+      "warnings": []
+    },
+    {
+      "stage_name": "Stage 4: Accounting Anomaly & Liquidity Stress Engine",
+      "status": "passed",
+      "latency_ms": 0.41,
+      "items_processed": 1,
+      "warnings": [
+        "Detected 1 anomaly flags"
+      ]
+    }
+  ],
+  "overdue_summary": {
+    "document_id": "stmt_sample_2_apexretail_fy24",
+    "company_name": "Apex Retail Corporation",
+    "fiscal_period": "FY2024",
+    "executive_summary": "Executive Financial Summary for Apex Retail Corporation (FY2024): The company recorded total revenue of $240,000.00. Accounts receivable analysis highlights total overdue exposure of $12,096.00 with an overdue ratio of 28.0%. Immediate focus is required on 1 critical delinquency accounts to optimize recovery and safeguard working capital liquidity.",
+    "overdue_metrics": {
+      "total_receivables": 43200.0,
+      "total_overdue_amount": 12096.0,
+      "overdue_ratio": 0.28,
+      "critical_overdue_count": 1,
+      "average_days_overdue": 71.2,
+      "expected_recovery_amount": 9283.68
+    },
+    "overdue_accounts": [
+      {
+        "account_id": "INV-2024-001",
+        "client_name": "Apex Retail Corporation - Enterprise Client Alpha",
+        "overdue_amount": 5443.2,
+        "currency": "USD",
+        "days_overdue": 95,
+        "risk_tier": "critical",
+        "last_payment_date": "2024-05-15",
+        "recommended_action": "Issue formal legal collection demand notice & suspend subscription service pending payment.",
+        "recovery_probability": 0.65
+      },
+      {
+        "account_id": "INV-2024-008",
+        "client_name": "Apex Retail Corporation - Global Logistics Beta",
+        "overdue_amount": 4233.6,
+        "currency": "USD",
+        "days_overdue": 62,
+        "risk_tier": "high",
+        "last_payment_date": "2024-06-20",
+        "recommended_action": "Enforce strict 14-day payment plan with 2% early-settlement incentive.",
+        "recovery_probability": 0.82
+      },
+      {
+        "account_id": "INV-2024-014",
+        "client_name": "Apex Retail Corporation - Regional Retail Gamma",
+        "overdue_amount": 2419.2,
+        "currency": "USD",
+        "days_overdue": 34,
+        "risk_tier": "medium",
+        "last_payment_date": "2024-07-10",
+        "recommended_action": "Send automated payment reminder and initiate courtesy executive follow-up call.",
+        "recovery_probability": 0.94
+      }
+    ],
+    "key_insights": [
+      {
+        "insight_id": "INS-REC-01",
+        "category": "overdue_recovery",
+        "title": "Overdue Receivables Concentration Risk",
+        "description": "Apex Retail Corporation has $12,096.00 in past due accounts receivable (28.0% of total receivables). Critical accounts (>90 days) comprise $9,283.68 in collectible value.",
+        "impact_score": 0.88,
+        "actionable_recommendation": "Prioritize recovery workflow on Tier-1 critical accounts to unlock liquidity before fiscal quarter close.",
+        "supporting_metrics": {
+          "total_overdue": 12096.0,
+          "critical_accounts": 1,
+          "expected_recovery": 9283.68
+        }
+      },
+      {
+        "insight_id": "INS-LIQ-02",
+        "category": "liquidity_analysis",
+        "title": "Cash Flow & Working Capital Cushion",
+        "description": "Cash and cash equivalents combined with recoverable receivables provide adequate coverage for operational expenses over the next 90 days.",
+        "impact_score": 0.72,
+        "actionable_recommendation": "Accelerate collection cycle from 65 days to target 45 days to reduce working capital reliance.",
+        "supporting_metrics": {
+          "avg_days_overdue": 71.2,
+          "overdue_ratio": 0.28
+        }
+      },
+      {
+        "insight_id": "INS-REV-03",
+        "category": "revenue_health",
+        "title": "Gross Margin Efficiency Analysis",
+        "description": "Reporting gross margin of 35.0% based on revenue of $240,000.00 and gross profit of $84,000.00.",
+        "impact_score": 0.65,
+        "actionable_recommendation": "Maintain strict cost-of-goods oversight while expanding high-margin enterprise service tiers.",
+        "supporting_metrics": {
+          "gross_margin_percent": 35.0
+        }
+      }
+    ],
+    "financial_risk_flags": [
+      "High Overdue Receivables Ratio: 28.0% exceeds 20% safety threshold.",
+      "Critical Delinquency Alert: 1 accounts past 90 days delinquent."
+    ],
+    "status": "SUCCESS",
+    "latency_ms": 52.53,
+    "model_used": "llama3.2:quantized-local-fallback",
+    "timestamp": "2026-10-01T15:35:22.977592+00:00"
+  },
+  "dual_persona_summary": {
+    "document_id": "stmt_sample_2_apexretail_fy24",
+    "company_name": "Apex Retail Corporation",
+    "fiscal_period": "FY2024",
+    "client_view": {
+      "executive_summary": "Welcome Apex Retail Corporation. Your financial report for FY2024 has been analyzed. We note an outstanding balance of $12,096.00. LedgerLense offers flexible self-service resolution options to help maintain your account in good standing.",
+      "account_status_headline": "Action Recommended: Outstanding Invoice Settlement Options Available",
+      "settlement_options": [
+        "Pay full balance ($12,096.00) via Portal to receive 2% early settlement credit.",
+        "Enforce a 3-month equal installment payment plan with zero late penalty fees.",
+        "Request a formal line item reconciliation call with your dedicated Billing Specialist."
+      ],
+      "self_service_actions": [
+        "Download Itemized Invoice Statement PDF",
+        "Set Up Auto-Pay via ACH / Bank Wire",
+        "Submit Invoice Inquiry or Payment Confirmation Receipt"
+      ],
+      "reassuring_note": "Thank you for being a valued client of LedgerLense. Our dedicated support team is available 24/7 to assist you."
+    },
+    "rm_view": {
+      "internal_risk_assessment": "INTERNAL RM RISK REPORT [Apex Retail Corporation - FY2024]: Total past due exposure stands at $12,096.00 (28.0% of total AR). Collection urgency level set to HIGH. Immediate RM intervention recommended prior to credit line renewal.",
+      "collection_urgency_tier": "high",
+      "recommended_credit_limit": 24000.0,
+      "tactical_negotiation_playbook": [
+        "Initiate direct C-level outreach with Apex Retail Corporation Chief Financial Officer regarding overdue exposure of $12,096.00.",
+        "Condition any new service provision or order delivery on 50% cash-in-advance payment.",
+        "Review current credit line limit and cap at $24,000.00 pending 30-day payment compliance.",
+        "Issue formal 14-day legal collection warning letter if no payment receipt is logged by Friday."
+      ],
+      "overdue_exposure_amount": 12096.0,
+      "credit_hold_recommended": true
+    },
+    "overdue_metrics": {
+      "total_receivables": 43200.0,
+      "total_overdue_amount": 12096.0,
+      "overdue_ratio": 0.28,
+      "critical_overdue_count": 1,
+      "average_days_overdue": 71.2,
+      "expected_recovery_amount": 10281.6
+    },
+    "status": "SUCCESS",
+    "latency_ms": 106.52,
+    "model_used": "llama3.2:quantized-local",
+    "timestamp": "2026-10-01T15:35:23.084263+00:00"
+  },
+  "anomaly_detection": {
+    "document_id": "stmt_sample_2_apexretail_fy24",
+    "company_name": "Apex Retail Corporation",
+    "fiscal_period": "FY2024",
+    "liquidity_metrics": {
+      "current_ratio": 1.72,
+      "quick_ratio": 1.23,
+      "working_capital": 35650.0,
+      "debt_to_equity": 1.1,
+      "dso_days": 65.7,
+      "cash_burn_rate_monthly": 0.0
+    },
+    "anomalies": [
+      {
+        "anomaly_id": "ANOM-REC-03",
+        "category": "receivables_anomaly",
+        "severity": "medium",
+        "title": "Elevated Days Sales Outstanding (DSO Spikes)",
+        "description": "DSO of 65.7 days significantly exceeds the 60-day healthy benchmark.",
+        "metric_name": "dso_days",
+        "observed_value": 65.7,
+        "threshold_value": 60.0,
+        "risk_explanation": "Capital tied up in receivables; elevated default risk on aging accounts.",
+        "recommended_remediation": "Enforce strict 30-day payment terms and issue immediate credit holds for delinquent accounts."
+      }
+    ],
+    "overall_risk_score": 30.0,
+    "overall_health_tier": "MODERATE_RISK",
+    "status": "SUCCESS",
+    "latency_ms": 0.28,
+    "model_used": "llama3.2:quantized-local",
+    "timestamp": "2026-10-01T15:35:23.084700+00:00"
+  },
+  "overall_status": "SUCCESS",
+  "total_latency_ms": 161.71,
+  "offline_verified": true,
+  "timestamp": "2026-10-01T15:35:23.084888+00:00"
+}
