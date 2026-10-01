@@ -39,7 +39,7 @@
     "expected_recovery_amount": 9.21
   },
   "status": "SUCCESS",
-  "latency_ms": 120.47,
+  "latency_ms": 0.22,
   "model_used": "llama3.2:quantized-local",
-  "timestamp": "2026-09-30T12:11:09.067669+00:00"
+  "timestamp": "2026-10-01T08:38:57.326952+00:00"
 }

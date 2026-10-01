@@ -1,0 +1,33 @@
+{
+  "document_id": "stmt_sample_4_precisionmanufacturing_fy24",
+  "company_name": "Precision Manufacturing Group",
+  "fiscal_period": "FY2024",
+  "liquidity_metrics": {
+    "current_ratio": 1.95,
+    "quick_ratio": 1.3,
+    "working_capital": 64350.0,
+    "debt_to_equity": 0.85,
+    "dso_days": 65.7,
+    "cash_burn_rate_monthly": 0.0
+  },
+  "anomalies": [
+    {
+      "anomaly_id": "ANOM-REC-03",
+      "category": "receivables_anomaly",
+      "severity": "medium",
+      "title": "Elevated Days Sales Outstanding (DSO Spikes)",
+      "description": "DSO of 65.7 days significantly exceeds the 60-day healthy benchmark.",
+      "metric_name": "dso_days",
+      "observed_value": 65.7,
+      "threshold_value": 60.0,
+      "risk_explanation": "Capital tied up in receivables; elevated default risk on aging accounts.",
+      "recommended_remediation": "Enforce strict 30-day payment terms and issue immediate credit holds for delinquent accounts."
+    }
+  ],
+  "overall_risk_score": 30.0,
+  "overall_health_tier": "MODERATE_RISK",
+  "status": "SUCCESS",
+  "latency_ms": 0.2,
+  "model_used": "llama3.2:quantized-local",
+  "timestamp": "2026-10-01T13:43:08.143131+00:00"
+}

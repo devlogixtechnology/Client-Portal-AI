@@ -1,6 +1,6 @@
 """
-Data schemas for the LLM Financial Summary & Insight Engine (LIG - Overdue Recovery).
-Defines strongly-typed contracts for financial insights, overdue account aging, recovery risk tiers, dual-persona views, and structured engine output using Pydantic v2.
+Data schemas for the LLM Financial Summary & Insight Engine (LIG - Overdue Recovery, Dual-Persona & Accounting Anomaly Engine).
+Defines strongly-typed contracts for financial insights, overdue account aging, recovery risk tiers, dual-persona views, and accounting anomalies using Pydantic v2.
 """
 
 from enum import Enum
@@ -27,6 +27,21 @@ class PersonaType(str, Enum):
     CLIENT = "client"
     RELATIONSHIP_MANAGER = "relationship_manager"
     DUAL = "dual"
+
+
+class AnomalySeverity(str, Enum):
+    LOW = "low"
+    MEDIUM = "medium"
+    HIGH = "high"
+    CRITICAL = "critical"
+
+
+class AnomalyCategory(str, Enum):
+    LIQUIDITY_STRESS = "liquidity_stress"
+    RECEIVABLES_ANOMALY = "receivables_anomaly"
+    ACCOUNTING_MISMATCH = "accounting_mismatch"
+    AUDIT_FOOTNOTE_FLAG = "audit_footnote_flag"
+    SOLVENCY_RISK = "solvency_risk"
 
 
 class OverdueAccount(BaseModel):
@@ -82,6 +97,30 @@ class RMViewSummary(BaseModel):
     credit_hold_recommended: bool = Field(False, description="Whether an immediate credit hold is recommended")
 
 
+class AccountingAnomaly(BaseModel):
+    """Represents a specific accounting anomaly or liquidity stress indicator."""
+    anomaly_id: str = Field(..., description="Unique anomaly identifier")
+    category: AnomalyCategory = Field(..., description="Category of accounting or liquidity anomaly")
+    severity: AnomalySeverity = Field(..., description="Severity level of anomaly")
+    title: str = Field(..., description="Concise title describing anomaly")
+    description: str = Field(..., description="Detailed description grounded in line items or footnote disclosures")
+    metric_name: str = Field(..., description="Name of financial ratio or line item metric evaluated")
+    observed_value: float = Field(..., description="Calculated or observed metric value")
+    threshold_value: float = Field(..., description="Benchmark safety or anomaly threshold value")
+    risk_explanation: str = Field(..., description="Explanation of operational or credit risk caused by anomaly")
+    recommended_remediation: str = Field(..., description="Actionable remediation recommendation")
+
+
+class LiquidityHealthMetrics(BaseModel):
+    """Comprehensive liquidity and working capital indicators."""
+    current_ratio: Optional[float] = Field(None, description="Current Assets / Current Liabilities")
+    quick_ratio: Optional[float] = Field(None, description="(Cash + Receivables) / Current Liabilities")
+    working_capital: Optional[float] = Field(None, description="Current Assets - Current Liabilities")
+    debt_to_equity: Optional[float] = Field(None, description="Total Liabilities / Total Stockholders Equity")
+    dso_days: Optional[float] = Field(None, description="Days Sales Outstanding (AR / Revenue * 365)")
+    cash_burn_rate_monthly: Optional[float] = Field(None, description="Monthly estimated net operating cash drain")
+
+
 class FinancialSummaryRequest(BaseModel):
     """Input request contract for the financial summary & insight engine."""
     document_id: str = Field(..., description="Target document ID")
@@ -120,4 +159,19 @@ class DualPersonaSummaryResult(BaseModel):
     status: str = Field("SUCCESS", description="Execution status ('SUCCESS', 'FALLBACK')")
     latency_ms: float = Field(..., description="Total execution latency in milliseconds")
     model_used: str = Field("llama3.2:quantized-local", description="Model identifier")
+    timestamp: str = Field(..., description="ISO 8601 execution timestamp")
+
+
+class AnomalyDetectionResult(BaseModel):
+    """Top-level JSON result output by the Accounting Anomaly Engine (LIG-3)."""
+    document_id: str = Field(..., description="Unique document ID")
+    company_name: str = Field(..., description="Reporting company name")
+    fiscal_period: str = Field(..., description="Fiscal period")
+    liquidity_metrics: LiquidityHealthMetrics = Field(..., description="Calculated liquidity health indicators")
+    anomalies: List[AccountingAnomaly] = Field(default_factory=list, description="List of detected accounting anomalies and stress flags")
+    overall_risk_score: float = Field(0.0, ge=0.0, le=100.0, description="Composite financial anomaly risk score (0=healthy, 100=critical risk)")
+    overall_health_tier: str = Field("HEALTHY", description="HEALTHY, MODERATE_RISK, HIGH_RISK, CRITICAL_STRESS")
+    status: str = Field("SUCCESS", description="Execution status ('SUCCESS', 'FALLBACK')")
+    latency_ms: float = Field(..., description="Total execution latency in milliseconds")
+    model_used: str = Field("llama3.2:quantized-local", description="Model identifier used")
     timestamp: str = Field(..., description="ISO 8601 execution timestamp")

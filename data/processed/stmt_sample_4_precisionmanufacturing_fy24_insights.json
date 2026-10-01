@@ -89,7 +89,7 @@
     "Critical Delinquency Alert: 1 accounts past 90 days delinquent."
   ],
   "status": "SUCCESS",
-  "latency_ms": 0.55,
+  "latency_ms": 1.15,
   "model_used": "llama3.2:quantized-local-fallback",
-  "timestamp": "2026-09-30T12:10:16.619936+00:00"
+  "timestamp": "2026-10-01T08:38:58.742160+00:00"
 }
