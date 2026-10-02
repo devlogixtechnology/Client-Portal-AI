@@ -1,6 +1,7 @@
 """
-Data schemas for the Data & RAG Pipeline Hardening (DRP - Overdue Recovery).
-Defines strongly-typed contracts for vector chunks, query embeddings, similarity search results, and RAG context payloads using Pydantic v2.
+Data schemas for the Data & RAG Pipeline Hardening (DRP - Overdue Recovery & ChromaDB Setup).
+Defines strongly-typed contracts for vector chunks, query embeddings, similarity search results,
+ChromaDB collection configs, and RAG context payloads using Pydantic v2.
 """
 
 from typing import Any, Dict, List, Optional
@@ -29,6 +30,34 @@ class QueryResult(BaseModel):
     text: str = Field(..., description="Retrieved chunk text content")
     similarity_score: float = Field(..., ge=-1.0, le=1.0, description="Cosine similarity score (0.0 to 1.0)")
     metadata: Dict[str, Any] = Field(default_factory=dict, description="Chunk metadata")
+
+
+class ChromaCollectionConfig(BaseModel):
+    """Configuration contract for local offline ChromaDB vector store."""
+    collection_name: str = Field("ledgerlense_notes_chunks", description="ChromaDB collection identifier")
+    persist_directory: str = Field("data/processed/chroma_db", description="Local disk persistence directory")
+    distance_metric: str = Field("cosine", description="Distance metric: cosine, l2, or ip")
+    embedding_model_path: str = Field("./models/all-MiniLM-L6-v2", description="Local pre-cached MiniLM model directory")
+
+
+class ChromaQueryResult(BaseModel):
+    """Result structure returned from ChromaDB similarity search queries."""
+    chunk_id: str = Field(..., description="Matched chunk ID")
+    statement_id: str = Field(..., description="Parent statement ID")
+    company_name: str = Field(..., description="Reporting company name")
+    note_title: str = Field(..., description="Section header title")
+    text: str = Field(..., description="Matched chunk text content")
+    distance: float = Field(..., description="Raw vector distance returned by ChromaDB")
+    similarity_score: float = Field(..., description="Normalized similarity score (0.0 to 1.0)")
+    metadata: Dict[str, Any] = Field(default_factory=dict, description="Metadata dictionary")
+
+
+class ChromaStoreResult(BaseModel):
+    """Summary result contract for ChromaDB vector operations."""
+    collection_name: str = Field(..., description="Target ChromaDB collection name")
+    total_documents: int = Field(0, description="Total count of documents in collection")
+    status: str = Field("SUCCESS", description="Operation status ('SUCCESS', 'FALLBACK')")
+    latency_ms: float = Field(..., description="Operation latency in milliseconds")
 
 
 class RAGQueryRequest(BaseModel):
