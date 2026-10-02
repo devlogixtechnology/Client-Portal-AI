@@ -89,6 +89,7 @@ class ChromaOfflineVectorStore:
         embeddings = [c.embedding if c.embedding else self.embedding_engine.embed_text(c.text) for c in chunks]
         metadatas = [
             {
+                "tenant_id": c.tenant_id,
                 "statement_id": c.statement_id,
                 "company_name": c.company_name,
                 "fiscal_period": c.fiscal_period,
@@ -97,7 +98,6 @@ class ChromaOfflineVectorStore:
             }
             for c in chunks
         ]
-
 
         status_str = "SUCCESS"
 
@@ -132,24 +132,27 @@ class ChromaOfflineVectorStore:
         self,
         query_text: str,
         company_filter: Optional[str] = None,
+        tenant_id: Optional[str] = None,
         top_k: int = 3
     ) -> List[ChromaQueryResult]:
         """
         Queries top_k similar chunks from ChromaDB by cosine distance.
-        Applies optional company_filter and returns formatted ChromaQueryResult matches.
+        Applies optional tenant_id and company_filter, returning formatted ChromaQueryResult matches.
         """
         query_vec = self.embedding_engine.embed_text(query_text)
 
         if self._collection is not None:
             try:
-                where_clause = None
+                where_clause = {}
+                if tenant_id and tenant_id.strip():
+                    where_clause["tenant_id"] = {"$eq": tenant_id.strip()}
                 if company_filter and company_filter.strip():
-                    where_clause = {"company_name": {"$eq": company_filter.strip()}}
+                    where_clause["company_name"] = {"$eq": company_filter.strip()}
 
                 res = self._collection.query(
                     query_embeddings=[query_vec],
                     n_results=top_k,
-                    where=where_clause,
+                    where=where_clause if where_clause else None,
                     include=["documents", "metadatas", "distances"]
                 )
 
@@ -167,6 +170,7 @@ class ChromaOfflineVectorStore:
                         query_results.append(
                             ChromaQueryResult(
                                 chunk_id=matched_ids[idx],
+                                tenant_id=meta.get("tenant_id", "default_tenant"),
                                 statement_id=meta.get("statement_id", ""),
                                 company_name=meta.get("company_name", ""),
                                 note_title=meta.get("note_title", "Notes to Accounts"),
@@ -181,10 +185,11 @@ class ChromaOfflineVectorStore:
                 logger.info(f"ChromaDB query fallback triggered: {e}")
 
         # Fallback query handling
-        fb_results = self._fallback_store.search(query_vec, top_k=top_k, company_filter=company_filter)
+        fb_results = self._fallback_store.search(query_vec, top_k=top_k, company_filter=company_filter, tenant_id=tenant_id)
         return [
             ChromaQueryResult(
                 chunk_id=r.chunk_id,
+                tenant_id=r.tenant_id,
                 statement_id=r.statement_id,
                 company_name=r.company_name,
                 note_title=r.note_title,
@@ -195,6 +200,7 @@ class ChromaOfflineVectorStore:
             )
             for r in fb_results
         ]
+
 
     def get_count(self) -> int:
         """Returns total document count in collection."""

@@ -1,6 +1,7 @@
 [
   {
     "chunk_id": "c_rag_1",
+    "tenant_id": "tenant_stmt_test_rag",
     "statement_id": "stmt_test_rag",
     "company_name": "RAG Test Inc",
     "fiscal_period": "FY24",

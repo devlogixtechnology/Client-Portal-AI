@@ -61,16 +61,23 @@ class LocalVectorStore:
         self,
         query_vector: List[float],
         top_k: int = 3,
-        company_filter: Optional[str] = None
+        company_filter: Optional[str] = None,
+        tenant_id: Optional[str] = None
     ) -> List[QueryResult]:
         """
         Executes cosine similarity search against indexed vector chunks.
-        Applies optional company_filter and returns top_k QueryResult matches.
+        Applies optional tenant_id and company_filter, returning top_k QueryResult matches.
         """
         if not self.chunks or not query_vector:
             return []
 
         candidates = self.chunks
+
+        # Strict Multi-Tenant Data Isolation Filtering
+        if tenant_id and tenant_id.strip():
+            target_tenant = tenant_id.strip()
+            candidates = [c for c in candidates if c.tenant_id == target_tenant]
+
         if company_filter and company_filter.strip():
             filter_lower = company_filter.lower().strip()
             candidates = [c for c in candidates if filter_lower in c.company_name.lower()]
@@ -81,6 +88,7 @@ class LocalVectorStore:
             scored_results.append(
                 QueryResult(
                     chunk_id=chunk.chunk_id,
+                    tenant_id=chunk.tenant_id,
                     statement_id=chunk.statement_id,
                     company_name=chunk.company_name,
                     note_title=chunk.note_title,
@@ -93,6 +101,7 @@ class LocalVectorStore:
         # Sort descending by similarity score
         scored_results.sort(key=lambda x: x.similarity_score, reverse=True)
         return scored_results[:top_k]
+
 
     def save_index(self, out_path: Optional[str | Path] = None) -> Path:
         """Saves current vector index to JSON file."""
