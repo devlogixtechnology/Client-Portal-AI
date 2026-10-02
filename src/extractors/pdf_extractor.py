@@ -1,6 +1,7 @@
 """
-PDF Financial Statement Extractor using pdfplumber.
+PDF Financial Statement Extractor using pdfplumber and Tesseract OCR Fallback (DRP-4).
 Extracts structured tables (Balance Sheet, Income Statement) and narrative text (Notes to Accounts).
+Automatically triggers Tesseract OCR fallback when digital text density is below threshold.
 """
 
 import re
@@ -9,11 +10,19 @@ from typing import Any, Dict, List, Optional
 import pdfplumber
 
 from src.extractors.base import BaseExtractor
+from src.extractors.ocr_fallback import TesseractOCRFallback, OCRExtractionConfig
 from src.models import ExtractedRawData
 
 
 class PDFExtractor(BaseExtractor):
-    """Extracts tables, narrative sections, and metadata from financial statement PDFs."""
+    """Extracts tables, narrative sections, and metadata from financial statement PDFs with OCR fallback."""
+
+    def __init__(
+        self,
+        ocr_fallback: Optional[TesseractOCRFallback] = None,
+        ocr_config: Optional[OCRExtractionConfig] = None
+    ):
+        self.ocr_fallback = ocr_fallback or TesseractOCRFallback(config=ocr_config)
 
     def extract(self, file_path: Path) -> ExtractedRawData:
         file_path = Path(file_path)
@@ -23,6 +32,7 @@ class PDFExtractor(BaseExtractor):
         all_tables: List[List[List[Any]]] = []
         narrative_sections: List[Dict[str, str]] = []
         full_text_pages: List[str] = []
+        is_ocr_fallback_used = False
 
         company_name: Optional[str] = None
         fiscal_period: Optional[str] = None
@@ -32,6 +42,14 @@ class PDFExtractor(BaseExtractor):
         with pdfplumber.open(file_path) as pdf:
             for page_idx, page in enumerate(pdf.pages):
                 page_text = page.extract_text() or ""
+                tables = page.extract_tables() or []
+
+                # Low text density or scanned image page -> Trigger OCR Fallback
+                if self.ocr_fallback.is_scanned_page(page_text, len(tables)):
+                    ocr_result = self.ocr_fallback.extract_page_ocr(page, page_idx)
+                    page_text = ocr_result.ocr_text
+                    is_ocr_fallback_used = True
+
                 full_text_pages.append(page_text)
 
                 # Detect metadata on early pages
@@ -47,7 +65,6 @@ class PDFExtractor(BaseExtractor):
                         fiscal_period = detected_period
 
                 # Extract tables with explicit table settings
-                tables = page.extract_tables()
                 if tables:
                     for tbl in tables:
                         # Clean table rows: filter out all-empty rows
@@ -60,9 +77,7 @@ class PDFExtractor(BaseExtractor):
                             all_tables.append(cleaned_tbl)
 
                 # Check if page is predominantly notes/narrative
-                # If page has 'Note ' or 'NOTES TO' and either no table or table is small footnote
-                if re.search(r"\b(?:NOTES TO|Note\s+\d+|Summary of Significant Accounting Policies)\b", page_text, re.IGNORECASE):
-                    # Separate narrative from page
+                if re.search(r"\b(?:NOTES TO|Note\s+\d+|Summary of Significant Accounting Policies|Notes Section)\b", page_text, re.IGNORECASE) or is_ocr_fallback_used:
                     narrative_sections.append({
                         "page": str(page_idx + 1),
                         "title": f"Notes Section (Page {page_idx + 1})",
@@ -88,5 +103,6 @@ class PDFExtractor(BaseExtractor):
             narrative_sections=narrative_sections,
             raw_text=full_raw_text,
             source_file=file_path.name,
-            file_type="pdf"
+            file_type="pdf",
+            is_ocr_fallback_used=is_ocr_fallback_used
         )

@@ -88,3 +88,4 @@ class ExtractedRawData(BaseModel):
     raw_text: str = Field("", description="Full raw textual content")
     source_file: str = ""
     file_type: str = ""
+    is_ocr_fallback_used: bool = Field(False, description="Whether Tesseract OCR fallback was used for scanned/low-density pages")
